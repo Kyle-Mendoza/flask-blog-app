@@ -1,1 +1,27 @@
-venv
+.venv/
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs and database files
+*.log
+instance/
+db.sqlite3
+
+# Ignore environment variables and secrets
+.env
+.env.local
+.env.*.bkp
+
+# Ignore IDE/editor settings (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Mac system files
+.DS_Store
