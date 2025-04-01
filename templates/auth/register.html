@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Register Account
+{% endblock %}
+
+{% block content %}
+<div id="register_form">
+  <p>
+    This is Register Page
+  </p>
+
+  <form action="" method="POST">
+    <label for="name">Fullname: </label>
+    <input type="text" name="name" placeholder="John Doe">
+    <label for="email">Email: </label>
+    <input type="email" name="email" placeholder="johndoe@gmail.com">
+    <label for="username">Username: </label>
+    <input type="text" name="username" placeholder="johndoe123">
+    <label for="password">Password: </label>
+    <input type="pasword" name="password">
+    <label for="confirm_password">Confirm Password: </label>
+    <input type="password" name="confirm_password">
+
+    <br>
+    <input type="submit" value="Create Account">
+  </form>
+</div>
+{% endblock %}

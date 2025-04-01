@@ -1,0 +1,14 @@
+#login_form {
+
+}
+
+#register_form {
+
+}
+
+form input, label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px;
+}

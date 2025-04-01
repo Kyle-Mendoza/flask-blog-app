@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
+{% block title %}
+  Login
+{% endblock %}
+
 {% block content %}
-    <p>This is the login page where the login form is in.</p>
+   <div id="login_form">
+      <p>This is the login page where the login form is in.</p>
+
+      <form action="" method="POST" >
+        <label for="username">Username: </label>
+        <input type="text" name="username" placeholder="johndoe123">
+        <label for="password">Password: </label>
+        <input type="password" name="password">
+
+        <br>
+        <input type="submit" value="Login">
+      </form>
+   </div>
 {% endblock %}
