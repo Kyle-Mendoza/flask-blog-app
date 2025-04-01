@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 
 # Using the DATABASE URL inside the environment variable
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 
 # Initialize the db and migrate extentions with the App
