@@ -10,15 +10,15 @@
     This is Register Page
   </p>
 
-  <form action="" method="POST">
-    <label for="name">Fullname: </label>
-    <input type="text" name="name" placeholder="John Doe">
+  <form action="{{ url_for('auth.register') }}" method="POST">
+    <label for="fullname">Fullname: </label>
+    <input type="text" name="fullname" placeholder="John Doe">
     <label for="email">Email: </label>
     <input type="email" name="email" placeholder="johndoe@gmail.com">
     <label for="username">Username: </label>
     <input type="text" name="username" placeholder="johndoe123">
     <label for="password">Password: </label>
-    <input type="pasword" name="password">
+    <input type="password" name="password">
     <label for="confirm_password">Confirm Password: </label>
     <input type="password" name="confirm_password">
 
