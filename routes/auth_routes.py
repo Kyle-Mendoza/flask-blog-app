@@ -1,7 +1,7 @@
 from flask import Blueprint
 
 from flask import render_template, redirect, url_for
-from flask import request, jsonify
+from flask import request
 
 from models import db
 from models.user import User

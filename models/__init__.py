@@ -11,4 +11,5 @@ def init_app(app):
     db.init_app(app)
     migrate.init_app(app, db)
     bcrypt.init_app(app)
+    
     from .user import User

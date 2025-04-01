@@ -1,7 +1,4 @@
-from models import db 
-from flask_bcrypt import Bcrypt
-
-bcrypt = Bcrypt()
+from models import db, bcrypt 
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
