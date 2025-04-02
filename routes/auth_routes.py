@@ -6,6 +6,7 @@ from flask import request
 from models import db
 from models.user import User
 
+from flask_login import login_user, login_required, logout_user, current_user
 
 auth  = Blueprint("auth", __name__)
 
@@ -22,6 +23,7 @@ def login():
        user = User.query.filter_by(username=username).first()
 
        if user and user.check_password(password):
+            login_user(user)
             return  redirect(url_for('blog.blog_home'))
         
        return 'Wrong password, please try again', 400
@@ -56,3 +58,10 @@ def register():
         return redirect(url_for('auth.login'))
 
     return render_template("auth/register.html")
+
+
+@auth.route("/logout")
+@login_required
+def logut():
+    logout_user()
+    pass
