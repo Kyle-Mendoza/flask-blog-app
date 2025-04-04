@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <p>Post {{ post.title }}</p>
+{% endblock %}
+
+{% block content %}
+    <center>
+       {% if post %}
+        <h1>Title: {{ post.title }}</h1>
+        <p>Description: {{ post.description }}</p>
+        <span>Author: {{ post.author.fullname }}</span>
+       {% endif %}
+    </center>
+    <a href="{{ url_for('blog.blog_home') }}">Go Back home</a>
+{% endblock %}

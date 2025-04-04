@@ -5,5 +5,34 @@
 {% endblock %}
 
 {% block content %}
+    {% if current_user.is_authenticated %}
+        Welcome {{ current_user.fullname }}
+    {% endif %}
     <h1>This is the index of the blog page</h1>
+    <form action="{{ url_for('blog.blog_home') }}" method="POST">
+        <label for="title">Title: </label>
+        <input type="text" name="title" placeholder="This is my day!">
+        <label for="description">Desription: </label>
+        <input type="text" name="description" placeholder="It is nice to live!">
+
+        <input type="submit" value="create post">
+    </form>
+
+    <div class="post">
+        {% if not posts %}
+            <p>No post yet</p>
+        {% endif %}
+        {% for post in posts %}
+            <h2>Title: {{ post.title }}</h2>
+            <p>Author: {{ post.author.fullname }} </p>
+            <p>Description: {{ post.description }}</p>
+            <a href="{{ url_for('blog.show_blog', id=post.id) }}">Show Post</a>
+            {% if current_user.id == post.user_id%}
+                <a href="{{ url_for('blog.edit_blog', id=post.id)}}">Edit Post</a>
+                <form action="{{ url_for('blog.delete_blog', id=post.id)}}" method="POST">
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete this post?')">Delete Post</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}
